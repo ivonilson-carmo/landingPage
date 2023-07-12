@@ -13,6 +13,9 @@
 
 /* font-family: 'Montserrat', sans-serif;
 font-family: 'Open Sans', sans-serif; */
+.hidden{
+    display: none;
+}
 
 html{
     font-size: 62.5%;
@@ -352,6 +355,41 @@ footer span{
     }
 
     header nav{
+        /* display: none; */
+    }
+    .dots{
+        display: inline-block;
+        cursor: pointer;
+        padding: 2rem;
+        transition: all 3ms ease-in-out;
+    }
+    .dots:hover{
+        background-color: #cccccc94;
+    }
+
+    header{
+        flex-wrap: wrap;
+    }
+
+    header > h1, header > nav, header > dots{
+        height: fit-content;
+    }
+
+    header > nav{
+        width: 100%;
+        margin-top: 2rem;
         display: none;
+    }
+
+    header nav ul{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    header nav ul li{
+        width: 20rem;
+        padding: .8rem 0;
+        align-self: center;
+        text-align: center;
     }
 }

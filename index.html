@@ -12,6 +12,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 
 </head>
 
@@ -19,6 +21,9 @@
 
     <header class="white-bg">
         <h1> Logo </h1>
+        <div class="dots hidden">
+            <i class="bi bi-three-dots-vertical"></i>
+        </div>
         <nav>
             <ul>
                 <li> <a href="#intro"> intro </a> </li>
@@ -213,6 +218,27 @@
         <p> Feito com <span>❤</span> por Ivonilson Carmo</p>
     </footer>
 
+    <script>
+        let dots = document.querySelector('header > div.dots')
+        dots.addEventListener('click', () => {
+            let class_icon = dots.querySelector('i').classList;
+
+            if (class_icon.value.indexOf('bi-three-dots-vertical') != -1) {
+                class_icon.remove('bi-three-dots-vertical');
+                class_icon.add('bi-x');
+                document.querySelector('header').style = 'height: 100vh;'
+                document.querySelector('header > nav').style = 'display: block;'
+
+            } else if (class_icon.value.indexOf('bi-x')) {
+                class_icon.remove('bi-x');
+                class_icon.add('bi-three-dots-vertical');
+                document.querySelector('header > nav').style = 'display: none;'
+                document.querySelector('header').style = 'height: fit-content;'
+
+            }
+            
+        })
+    </script>
 </body>
 
 </html>
